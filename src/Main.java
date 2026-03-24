@@ -2,23 +2,39 @@ import java.util.Scanner;
 
 public class Main {
 
-    static int power(int a, int n) {
+    static void readArray(int[] arr, int index, Scanner sc) {
 
-        if (n == 0) {
-            return 1;
+        if (index == arr.length) {
+            return;
         }
 
-        return a * power(a, n - 1);
+        arr[index] = sc.nextInt();
+
+        readArray(arr, index + 1, sc);
+    }
+
+    static void reverse(int[] arr, int index) {
+
+        if (index == arr.length) {
+            return;
+        }
+
+        reverse(arr, index + 1);
+
+        System.out.print(arr[index] + " ");
     }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        int a = sc.nextInt();
         int n = sc.nextInt();
 
-        System.out.println(power(a, n));
+        int[] arr = new int[n];
+
+        readArray(arr, 0, sc);
+
+        reverse(arr, 0);
 
     }
 }
