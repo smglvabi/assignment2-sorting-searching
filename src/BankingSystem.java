@@ -1,22 +1,22 @@
 import java.util.*;
 
 public class BankingSystem {
-    //Task 1 2: LinkedList for account storage
+    // Task 1 & 2: LinkedList for account storage
     static LinkedList<BankAccount> accounts = new LinkedList<>();
 
-    // Task 3: Stack for transaction history(LIFO)
+    // Task 3: Stack for Transaction History (LIFO)
     static Stack<String> transactionHistory = new Stack<>();
 
-    // Task 4: Queue for bill payments(FIFO)
+    // Task 4: Queue for Bill Payments (FIFO)
     static Queue<String> billQueue = new LinkedList<>();
 
-    // Task 5: Queue for account openin requests
+    // Task 5: Queue for Account Opening Requests
     static Queue<BankAccount> accountRequests = new LinkedList<>();
 
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // Task 6: Physical data structure (Array)
+        // Task 6: Physical Data Structure (Array)
         BankAccount[] initialAccounts = new BankAccount[3];
         initialAccounts[0] = new BankAccount("101", "Ali", 150000);
         initialAccounts[1] = new BankAccount("102", "Sara", 220000);
@@ -39,7 +39,7 @@ public class BankingSystem {
         }
     }
 
-    // PART 3: INTEGRATED MENUS
+    // --- PART 3: INTEGRATED MENUS ---
 
     static void bankMenu() {
         System.out.println("\n1. Submit Account Request\n2. Deposit\n3. Withdraw\n4. Back");
